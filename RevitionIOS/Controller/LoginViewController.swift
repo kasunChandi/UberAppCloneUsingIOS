@@ -110,12 +110,14 @@ class LoginViewController: UIViewController {
     
     @objc func handleShowSignUp() {
        
+        let vc = SignUpViewController()
+        navigationController?.pushViewController(vc, animated: true)
     }
     
     
     func configureUI() {
         
-       // configureNavigationBar()
+       configureNavigationBar()
         
         view.backgroundColor = .backgroundColor
         
@@ -134,6 +136,10 @@ class LoginViewController: UIViewController {
         view.addSubview(dontHaveAccountButton)
         dontHaveAccountButton.centerX(inView: view)
         dontHaveAccountButton.anchor(bottom: view.safeAreaLayoutGuide.bottomAnchor, height: 32)
+    }
+    func configureNavigationBar() {
+        navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.barStyle = .black
     }
     
   /*  private lazy var emailContainerView: UIView = {
